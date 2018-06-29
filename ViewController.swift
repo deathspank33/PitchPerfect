@@ -1,4 +1,4 @@
-//
+//**Correct "Automatic" Assistant view**
 //  ViewController.swift
 //  PitchPerfectTwo
 //
@@ -10,13 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //MARK: RECORD BUTTON LABEL (TEXT)
+    //MARK: Various Outlets that reference to actions.
     @IBOutlet weak var recordingLabel: UILabel!
+    @IBOutlet weak var recordingButton: UIButton!
+    @IBOutlet weak var stopRecording: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view appeared")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,13 +35,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: RECORDING BUTTON
+    //MARK: RECORDING BUTTON ACTION
     @IBAction func recordAudio(_ sender: Any) {
         recordingLabel.text = "Recording in Progress"
         print("record btn was pressed")
     }
     
-    //MARK: STOP RECORDING BUTTON
+    //MARK: STOP RECORDING BUTTON ACTION
     @IBAction func stopRecording(_ sender: Any) {
         print("Stop Pressed")
     }
